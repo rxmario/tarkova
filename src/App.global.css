@@ -3,20 +3,13 @@
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
 body {
-  position: relative;
+  display: flex;
   color: white;
   height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
   font-family: sans-serif;
   overflow-y: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 button {
@@ -57,4 +50,28 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+
+.Start.Headline {
+  top: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.searchbar {
+  display: flex;
+  flex: 1;
+  justify-content: left;
+  width: 33%;
+  background-color: black;
+  height: 50px;
+  position: absolute;
+}
+
+.searchbaritem {
+  width: 100%;
+}
+
+.root {
+  flex: 1;
 }
