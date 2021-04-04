@@ -100,7 +100,6 @@
     "url": "https://github.com/rxmario/"
   },
   "license": "MIT",
-
   "keywords": [
     "EFT",
     "Tarkov",
@@ -202,7 +201,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.0.0",
     "husky": "^4.2.5",
     "identity-obj-proxy": "^3.0.0",
@@ -228,13 +227,24 @@
     "yarn-deduplicate": "^3.1.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@types/redux-logger": "^3.0.8",
+    "axios": "^0.21.1",
     "electron-debug": "^3.1.0",
     "electron-log": "^4.2.4",
     "electron-updater": "^4.3.4",
     "history": "^5.0.0",
+    "immutability-helper": "^3.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-observable": "^1.2.0",
+    "redux-persist": "^6.0.0",
     "regenerator-runtime": "^0.13.5",
     "source-map-support": "^0.5.19"
   },

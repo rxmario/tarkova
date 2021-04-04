@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.global.css';
-import Start from './components/start/Start';
+import { Start } from './components/start/components/Start';
 
 export default function App() {
   return (
