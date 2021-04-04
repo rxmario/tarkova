@@ -37,11 +37,15 @@ export enum StartViewActionTypes {
   GET_ITEMS = 'GET_ITEMS',
   GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS',
   GET_ITEMS_FAILURE = 'GET_ITEMS_FAILURE',
+
+  SET_QUERY = 'SET_QUERY',
 }
 
-export type GetItemsRequestAction = TriggerAction<
-  StartViewActionTypes.GET_ITEMS
+export type GetItemsRequestAction = PayloadAction<
+  StartViewActionTypes.GET_ITEMS,
+  string
 >;
+
 export type GetItemsSuccessAction = PayloadAction<
   StartViewActionTypes.GET_ITEMS_SUCCESS,
   MarketItem[]
@@ -51,10 +55,22 @@ export type GetItemsFailureAction = PayloadAction<
   // eslint-disable-next-line @typescript-eslint/ban-types
   {}
 >;
+export type SetQueryAction = PayloadAction<
+  StartViewActionTypes.SET_QUERY,
+  string
+>;
 
-export const getItemsRequestAction = (): GetItemsRequestAction => {
+export const setQueryAction = (query: string): SetQueryAction => {
+  return {
+    type: StartViewActionTypes.SET_QUERY,
+    payload: query
+  };
+};
+
+export const getItemsRequestAction = (query: string): GetItemsRequestAction => {
   return {
     type: StartViewActionTypes.GET_ITEMS,
+    payload: query,
   };
 };
 
@@ -77,4 +93,5 @@ export const getItemsFailureAction = (error: Error): GetItemsFailureAction => {
 export type StartViewActions =
   | GetItemsRequestAction
   | GetItemsSuccessAction
-  | GetItemsFailureAction;
+  | GetItemsFailureAction
+  | SetQueryAction;

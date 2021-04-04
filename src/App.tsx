@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.global.css';
-import { Start } from './components/start/components/Start';
+import { StartViewContainer } from './components/start/components/Start.container';
 
 export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Start} />
+        <Route path="/" component={StartViewContainer} />
       </Switch>
     </Router>
   );

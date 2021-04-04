@@ -25,6 +25,7 @@ const persistConfig: PersistConfig<any> = {
   key: 'Tarkova',
   storage,
   version: 1.1,
+  blacklist: ['startState'],
 };
 
 export const reducer = persistReducer(persistConfig, rootReducer);

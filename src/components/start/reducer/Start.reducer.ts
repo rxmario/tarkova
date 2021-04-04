@@ -9,10 +9,12 @@ import { BaseState } from '../../../core/AppState';
 import Status from '../../../core/Status';
 
 export interface StartViewState extends BaseState {
+  query: string;
   items: MarketItem[];
 }
 
 export const defaultStartViewState: StartViewState = {
+  query: '',
   items: [],
   status: Status.READY,
   error: '',
@@ -87,7 +89,24 @@ const error = (
   }
 };
 
+const query = (
+  state: StartViewState['query'] | undefined,
+  action: StartViewActions
+): StartViewState['query'] => {
+  if (state === undefined) {
+    return defaultStartViewState.query;
+  }
+
+  switch (action.type) {
+    case StartViewActionTypes.SET_QUERY:
+      return update(state, { $set: action.payload });
+    default:
+      return state;
+  }
+};
+
 const startViewReducer = combineReducers<StartViewState>({
+  query,
   items,
   status,
   error,
